@@ -1,203 +1,258 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
 #pragma warning(disable:6031)
 #include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<math.h>
 
+int main()
+{
+	int arr[] = { '1','2','3' };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	printf("%d\n", sz);
+}
+//求100以内的数字中包含9的个数
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 1; i < 101; i++)
+//	{
+//		if (i % 10 == 9)
+//		{
+//			printf("% d", i);
+//			count++;
+//		}
+//		if (i / 10 == 9)
+//		{
+//			printf("% d", i);
+//			count++;
+//		}
+//		
+//	}
+//	printf("\ncount = %d\n", count);
+//	return 0;
+//}
+//求素数
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 101; i < 201; i+=2)
+//	{
+//		//判断i是否为素数(两种方法)
+//		//1.试除法(产生2->i-1)
+//		int j = 0;
+//		for (j = 2; j <=(i/2); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (j >(i/2))
+//		{
+//			count++;
+//			printf("% d", i);
+//		}
+//	}
+//	printf("\ncount = %d\n", count);
+//	return 0;
+//}
+//求闰年的个数和年份
+//int main()
+//{
+//	int year = 0;
+//	int count = 0;
+//	for (year = 1000; year <= 2000; year++)
+//	{
+//		//判断year是否为闰年
+//		//1.能被4整除并且不能被100整除
+//		//2.能被400整除
+//		if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+//		{
+//			printf("% d", year);
+//			count++;
+//		}
+//	}
+//	printf("\ncount = %d\n", count);
+//	return 0;
+//}
+//求两个数的最大公约数(辗转相除法)
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	int i = 0;
+//	scanf("%d%d", &m, &n);
+//	//if (m >= n)
+//	//{
+//		while (i = m % n)
+//		{
+//			m = n;
+//			n = i;
+//		}
+//		printf("%d\n", n);
+//	//}
+	//else
+	/*{
+		while (n % m)
+		{
+			i = n % m;
+			n = m;
+			m = i;
+		}*/
+		//printf("%d\n", m);
+	//}
+	
+	
+	//return 0;
+//}
 //int main()
 //{
 //	int i = 1;
-//	do
+//	for (i = 1; i < 101; i++)
 //	{
-//		if (i == 5)
-//			continue;
-//		printf("% d", i);
-//		i++;
-//	} 
-//	while (i < 11);
+//		if (i % 3 == 0)
+//		{
+//			printf("% d", i);
+//		}
+//		
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	scanf("%d%d%d", &a, &b, &c);
+//	//算法实现
+//	//a最大，b次之，c最小
+//	if (a < b)
+//	{
+//		int ret = a;
+//		int a = b;
+//		int b = ret;
+//	}
+//	if (a < c)
+//	{
+//		int ret = a;
+//		a = c;
+//		c = ret;
+//	}
+//	if (b < c)
+//	{
+//		int ret = b;
+//		b = c;
+//		c = ret;
+//	}
+//		printf("%d %d %d\n", a,b,c);
+//	
+//	return 0;
 //}
 //int main()
 //{
 //	int i = 0;
-//	int j = 0;
-//	for (;i<10;i++)
-//	{
-//		for (; j < 10; j++)
-//		{
-//			printf("haha\n");
-//		}
-//		
-//	}
-//	return 0;
-//
-//}
-//int main()
-//{
-//	int i = 1;
-//	for (i = 1; i < 11; i++)
-//	{
-//		printf("% d", i);
-//	}
-//	return 0;
-//}
-//int main()
-//{
-//	int ch = 0;
-//	while ((ch = getchar()) != 'EOF')
-//	{
-//		if (ch < '0' || ch>'9')
-//		{
-//			continue;
-//		}
-//		putchar(ch);
-//	}
-//	return 0;
-//
-//}
-//int main()
-//{
-//	int ch = 0;
-//	int ret = 0;
 //	char password[20] = { 0 };
-//	printf("请输入密码:>");
-//	scanf("%s", password);
-//	//缓冲区还剩余一个"\n"
-//	//读取一些"\n"
-//	while ((ch = getchar()) != '\n')
+//	for (i = 0; i < 3; i++)
 //	{
-//		;
-//	}	
-//	printf("请确认(Y/N):>");
-//	ret = getchar();
-//	if (ret == 'Y')
-//	{
-//		printf("确认成功\n");
+//		printf("请输入密码:>");
+//		scanf("%s", password);
+//		if (strcmp(password, "123456") == 0)//==不能用来比较数组
+//		{
+//			printf("登录成功\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("密码错误");
+//		}
 //	}
-//	else
+//	if (i == 3)
 //	{
-//		printf("输入失败\n");
+//		printf("三次密码输入均错误，退出程序\n");
+//	}
+//	return 0;
+//}
+//用最简式寻找数组中的某个数
+//int main()
+//{
+//	char arr1[] = "welcome to bit!!!!";
+//	char arr2[] = "##################";
+//	int left = 0;
+//	//int right = sizeof(arr1) / sizeof(arr1[0]) - 2;
+//	int right = strlen(arr1) - 1;
+//	while (left <= right)
+//	{
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		//休息1S
+//		Sleep(1000);
+//		system("cls");//执行系统命令的一个函数-cls--清空屏幕
+//		left++;
+//		right--;
 //
 //	}
+//	printf("%s\n", arr2);
 //	return 0;
+//
 //}
 //int main()
 //{
-//	int ch = 0;
-//	while ((ch = getchar()) != EOF)
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 77;
+//	//写一个代码，在arr数组(有序地)找到7
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i <=sz; i++)
 //	{
-//		putchar(ch);
-//	}
-//	return 0;
-//}
-//int main()
-//{
-//	int i = 1;
-//	while (i < 11)
-//	{
-//		i++;
-//		if (i == 5)
-//			continue;
-//		printf("% d", i);
-//		
-//	}
-//}
-//int main()
-//{
-//	//switch()括号里面必须是整型
-//	//case后面必须是整型常量表达式
-//	int day = 0;
-//	scanf("%d", &day);
-//	switch (day)
-//	{
-//	case 1:
-//		printf("周一\n");
-//		break;
-//	case 2:
-//		printf("周二\n");
-//		break;
-//	case 3:
-//		printf("周三\n");
-//		break;
-//	case 4:
-//		printf("周四\n");
-//		break;
-//	case 5:
-//		printf("周五\n");
-//		break;
-//	case 6:
-//		printf("周六\n");
-//		break;
-//	case 7:
-//		printf("周日\n");
-//		break;
-//	default:
-//		printf("休息日");
-//		break;
-//	}
-//	return 0;
-//}
-//int main()
-//{
-//	int i = 1;
-//	while (i < 101)
-//	{
-//		if (i % 2 == 1)
+//		if (k == arr[i])
 //		{
-//			printf("% d", i);
+//			printf("找到了，下标是：%d\n", i);
+//			break;
 //		}
-//		i++;
-//	}
-//}
-	/*while (i<101)
-	{
-		printf("% d", i);
-		i += 2;
-	}
-	*/
-//int main()
-//{
-//	int i= 1;
-//	for (i = 1; i < 101; i++)
-//	{
-//		if (i % 2 == 1)
+//		if (sz == i)
 //		{
-//			printf("% d",i);
-//		}	
-//	}
-//	return 0;
-//	
-//}
-//int main()
-//{
-//	int age = 0;
-//	scanf("%d", &age);
-//	if (age < 18)
-//	{
-//		printf("未成年\n");
-//	}
-//	else if(age >= 18 && age <= 28)
-//	{
-//		printf("青少年");
-//	}
-//	else if (age > 28 && age <= 48)
-//	{
-//		printf("中年");
-//	}
-//	else if (age > 48 && age <= 60)
-//	{
-//		printf("中老年");
-//	}
-//	else
-//	{
-//		printf("老年");
+//			printf("找不到\n");
+//		}
 //	}
 //	return 0;
 //}
 //int main()
 //{
-//	int sum1 = 0;
-//	int sum2 = 0;
+//	int i = 1;
+//	int n = 0;
+//	int ret = 1;
 //	int sum = 0;
-//	scanf("%d%d", &sum1, &sum2);
-//	sum = sum1 + sum2;
-//	printf("sum=%d\n", sum);
+//	//scanf("%d", &n);
+//	//do
+//	//{
+//		for(i=1;i<=10;i++)
+//		{
+//			ret *= i;
+//			sum += ret;
+//		}
+//	//} while (i < 4);
+//	printf("%d", sum);
+//
+//	return 0;
+//}
+//计算N的阶乘
+//int main()
+//{
+//	int i = 1;
+//	int n = 0;
+//	int ret = 1;
+//	scanf("%d", &n);
+//	for(i=1;i<=n;i++)
+//	{
+//		ret *= i;
+//	}
+//	
+//	printf("%d", ret);
+//
 //	return 0;
 //}
