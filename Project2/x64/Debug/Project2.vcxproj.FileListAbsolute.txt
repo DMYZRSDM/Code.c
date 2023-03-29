@@ -1,2 +1,0 @@
-D:\code1\code1.c\Project2\x64\Debug\Project2.exe
-D:\Code2\Code.c\Project2\x64\Debug\Project2.exe
