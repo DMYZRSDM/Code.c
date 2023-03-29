@@ -7,25 +7,38 @@
 #include<math.h>
 #include<time.h>
 
+int Add(int x, int y)
+{
+	int z = 0;
+	z = x + y;
+	return z;
+}
+
 int main()
 {
-	char input[20] = { 0 };
-	//shutdown -s -t 60
-	//system()--执行系统命令
-	system("shutdown -s -t 60");
-again:
-	printf("请注意，一分钟关机，一分钟关机\n");
-	scanf("%s", input);
-	if (strcmp(input, "你是猪") == 0)
-	{
-		system("shutdown -a");
-	}
-	else
-	{
-		goto again;
-	}
+	int sum = Add(3, 5);
+	printf("%d\n", sum);
 	return 0;
 }
+//int main()
+//{
+//	char input[20] = { 0 };
+//	//shutdown -s -t 60
+//	//system()--执行系统命令
+//	system("shutdown -s -t 60");
+//again:
+//	printf("请注意，一分钟关机，一分钟关机\n");
+//	scanf("%s", input);
+//	if (strcmp(input, "你是猪") == 0)
+//	{
+//		system("shutdown -a");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
 //void menu()
 //{
 //	printf("**********************\n");
