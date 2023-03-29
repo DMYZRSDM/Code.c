@@ -7,19 +7,79 @@
 #include<math.h>
 #include<time.h>
 
-int Add(int x, int y)
-{
-	int z = 0;
-	z = x + y;
-	return z;
-}
-
 int main()
 {
-	int sum = Add(3, 5);
-	printf("%d\n", sum);
+	int a = 0;
+	
+	for (a = 101; a < 201; a+=2)
+	{
+		int j = 0;
+		for (j = 2; j<=(a/2); j++);
+		{
+			if (a % j == 0)
+			{
+				break;
+			}	
+		}
+		if (j > (a / 2))
+		{
+			printf("% d", a);
+		}
+			
+	}
 	return 0;
 }
+//void Swap(int *x, int *y)
+//{
+//	int tem = 0;
+//	 tem = *x;
+//	 *x = *y;
+//	 *y = tem;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	printf("a=%d,b=%d\n", a, b);
+//	Swap(&a, &b);
+//	printf("a=%d,b=%d\n", a, b);
+//	return 0;
+//}
+//int get_max(int x, int y)
+//{
+//	if (x > y)
+//		return x;
+//	else
+//		return y;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int max = get_max(a, b);
+//	printf("max = %d\n", max);
+//}
+//int main()
+//{
+//	//memset--(void*ptr,int value,size_t num)--把内存块的前num个字符转到value值中
+//	char arr[] = "hello world";
+//	memset(arr, '*',6);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+//int Add(int x, int y)
+//{
+//	int z = 0;
+//	z = x + y;
+//	return z;
+//}
+//
+//int main()
+//{
+//	int sum = Add(3, 5);
+//	printf("%d\n", sum);
+//	return 0;
+//}
 //int main()
 //{
 //	char input[20] = { 0 };
