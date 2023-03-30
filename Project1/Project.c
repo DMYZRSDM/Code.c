@@ -1,6 +1,33 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
 #pragma warning(disable:6031)
 #include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main()
+{
+	int a = 0;
+	int j = 0;
+	int count = 0;
+	for (a = 101; a < 201; a+=2)
+	{
+
+		for (j = 2; j <= (a/2); j++)
+		{
+			if (a % j == 0)
+			{
+				break;
+			}
+		}
+		if (j > (a / 2))
+		{
+			count++;
+			printf("% d", a);
+		}	
+	}
+	printf("\ncount = %d\n", count);
+	return 0;
+}
 
 //int main()
 //{
