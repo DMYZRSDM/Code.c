@@ -6,29 +6,222 @@
 #include<stdlib.h>
 #include<math.h>
 #include<time.h>
+#include"add.h"
 
+//int my_strlen(char* str)
+//{
+//	//count - 计数器
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//用递归的方式求解，就不用增加一个临时变量
+int my_strlen(char* str)
+{
+	if (*str != '\0')
+	{
+		return 1 + my_strlen(str + 1);
+	}
+	else
+		return 0;
+}
 int main()
 {
-	int a = 0;
-	
-	for (a = 101; a < 201; a+=2)
-	{
-		int j = 0;
-		for (j = 2; j<=(a/2); j++);
-		{
-			if (a % j == 0)
-			{
-				break;
-			}	
-		}
-		if (j > (a / 2))
-		{
-			printf("% d", a);
-		}
-			
-	}
-	return 0;
+	char arr[] = "bit";
+	//模拟实现了一个strlen函数
+	int len = my_strlen(arr);
+	printf("len = %d ", len);
 }
+//函数 递归
+//void print(int n )
+//{
+//	if (n > 9)
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%d", &num);
+//	print(num);
+//}
+//函数的实现
+//int main()
+//{
+//	int sum = 0;
+//	sum = Add(3,5);
+//	printf("%d\n", sum);
+//}
+//Printf:返回打印字符的个数
+//int main()
+//{
+//	printf("%d", printf("%d", printf("%d", 43)));
+//}
+//int main()
+//{
+//	int len = 0;
+//	len = strlen("123");
+//	printf("%d\n", len);
+//	printf("%d\n", strlen("123"));
+//	return 0;
+//}
+//void Add(int* p)
+//{
+//	(*p)++;
+//}
+//int main()
+//{
+//	int num = 0;
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//}
+//int binary_search(int arr[], int k, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//	return -1;
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 7;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int ret = binary_search(arr, k,sz);
+//	if (ret == -1)
+//	{
+//		printf("找不到指定的数字\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是：%d\n", ret);
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = 0;
+//	sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = arr[0];
+//	int right = arr[sz - 2];
+//	printf("%d %d %d", sz, left, right);
+//}
+
+//用函数二分查找
+//int binary_search(int arr[], int k, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (k > arr[mid])
+//		{
+//			left = mid + 1;
+//		}
+//		else if (k < arr[mid])
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//			return mid;
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	在一个有序数组中查找具体的某个数值
+//	如果找到了返回这个数的下标，否则返回-1
+//	不能用一下求数组的长度，在这里本质上arr是一个指针
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 7;
+//	int sz = sizeof(arr) / size(arr[0]);
+//	int ret = binary_search(arr, k, sz);
+//	if (ret == -1)
+//	{
+//		printf("找不到指定的数字\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是:%d\n", ret);
+//	}
+//	return 0;
+//}
+//用函数求闰年
+//int is_leap_year(int x)
+//{
+//	if ((x % 4 == 0 && x % 100 != 0) || (x % 400 == 0))
+//	{
+//		return 1;
+//	}
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	int year = 0;
+//	int count = 0;
+//	for (year = 1000; year <= 2000; year++)
+//	{
+//		if (1 == is_leap_year(year))
+//		{
+//			count++;
+//			printf("% d", year);
+//		}
+//	}
+//	printf("\ncount = %d", count);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	
+//	for (a = 101; a < 201; a+=2)
+//	{
+//		int j = 0;
+//		for (j = 2; j<=(a/2); j++)
+//		{
+//			if (a % j == 0)
+//			{
+//				break;
+//			}	
+//		}
+//		if (j > (a / 2))
+//		{
+//			printf("% d", a);
+//		}
+//			
+//	}
+//	return 0;
+//}
 //void Swap(int *x, int *y)
 //{
 //	int tem = 0;
@@ -463,7 +656,7 @@ int main()
 //int main()
 //{
 //	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//	int k = 77;
+//	int k = 7;
 //	//写一个代码，在arr数组(有序地)找到7
 //	int i = 0;
 //	int sz = sizeof(arr) / sizeof(arr[0]);
