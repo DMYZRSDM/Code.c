@@ -8,46 +8,195 @@
 #include<time.h>
 #include"add.h"
 
-//用函数二分查找
-int binary_search(int arr[], int k, int sz)
+//冒泡排序
+void bubble_sort(int arr[], int sz)
 {
-	int left = 0;
-	int right = sz - 1;
-	while (left <= right)
+	//确定冒泡排序的趟数
+	int i = 0;
+	for (i = 0; i < sz - 1; i++)
 	{
-		int mid = (left + right) / 2;
-		if (k > arr[mid])
+		int flag = 1;//假设这一趟要排序的数据已经有序
+		//每一趟冒泡排序(是变化的)
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
 		{
-			left = mid + 1;
+			if (arr[j] > arr[j + 1])
+			{
+				int tem = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tem;
+				flag == 0;
+			}
 		}
-		else if (k < arr[mid])
+		if (flag == 1)
 		{
-			right = mid - 1;
+			break;
 		}
-		else
-			return mid;
 	}
-	return -1;
 }
+
 int main()
 {
-	//在一个有序数组中查找具体的某个数值
-	//如果找到了返回这个数的下标，否则返回-1
-	//不能用一下求数组的长度，在这里本质上arr是一个指针
 	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int k = 7;
+	int i = 0;
 	int sz = sizeof(arr) / sizeof(arr[0]);
-	int ret = binary_search(arr, k, sz);
-	if (ret == -1)
+	//对arr进行排序，排成升序
+	//arr是数组，我们对数组arr进行传参，实际上传递过去的是arr数组的首元素地址，应该在传参之前就算出来数组大小，然后再传参，也不能用Int*或者char*来传参，这样求数组长度时会发生错误
+	bubble_sort(arr, sz);//冒泡排序
+	for (i = 0; i < sz; i++)
 	{
-		printf("找不到指定的数字\n");
-	}
-	else
-	{
-		printf("找到了，下标是:%d\n", ret);
+		printf("%d ", arr[i]);
 	}
 	return 0;
 }
+//打印二维数组
+//int main()
+//{
+//	int arr[3][4] = { {1,2},{3,4,5,6} };
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 4; j++)
+//		{
+//			printf("&arr[%d][%d] = %p\n",i,j, &arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//%p-打印地址
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	int sz = 0;
+//	sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("&arr[%d] = %p\n",i, &arr[i]);
+//	}
+//}
+//数组
+//int main()
+//{
+//	//创建一个数组-存放整型-10个
+//	int arr[] = { 1,2,3 };
+//	char arr2[6] = { 'a','b',0};
+//	char arr3[] = "abc";
+//	//int len = strlen(arr2);
+//	//int len2 = strlen(arr3);
+//	printf("%d\n", (int)sizeof(arr));
+//	//printf("%d\n", len2);
+//	return 0;
+//}
+//描述第n个斐波那契数列
+//int count = 0;(效率低)
+//int Fac2(int n)
+//{
+//	if (n == 5)//测试第5个斐波那契数的计算次数
+//	{
+//		count++;
+//	}
+//	if (n <= 2)
+//		return 1;
+//	else
+//		return (Fac2(n - 1) + Fac2(n - 2));
+//	
+//}
+//效率高
+//int Fac2(int n)
+//{
+//	
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	 
+//	while (n > 2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	//TDD--测试驱动开发
+//	ret = Fac2(n);
+//	printf("%d\n", ret);
+//}
+//int Fac1(int n)
+//{
+//	if (n <=1)
+//		return 1;
+//	else
+//		return n * Fac1(n - 1);
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	ret = Fac1(n);//循环的方式
+//	printf("%d\n", ret);
+//}
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	int sum = 1;
+//	scanf("%d", &n);
+//	for (i = 1; i<=n; i++)
+//	{
+//		sum *= i;
+//	}
+//	printf("%d\n", sum);
+//	return 0;
+//}
+//用函数二分查找
+//int binary_search(int arr[], int k, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (k > arr[mid])
+//		{
+//			left = mid + 1;
+//		}
+//		else if (k < arr[mid])
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//			return mid;
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	//在一个有序数组中查找具体的某个数值
+//	//如果找到了返回这个数的下标，否则返回-1
+//	//不能用一下求数组的长度，在这里本质上arr是一个指针
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 7;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int ret = binary_search(arr, k, sz);
+//	if (ret == -1)
+//	{
+//		printf("找不到指定的数字\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是:%d\n", ret);
+//	}
+//	return 0;
+//}
 //用函数求闰年
 //int is_leap_year(int x)
 //{
