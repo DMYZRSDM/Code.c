@@ -1,4 +1,2 @@
 ﻿  Project.c
-D:\Code2\Code.c\Project2\Project.c(39,25): warning C4013: “size”未定义；假设外部返回 int
-Project.obj : error LNK2019: 无法解析的外部符号 size，函数 main 中引用了该符号
-D:\Code2\Code.c\Project2\x64\Debug\Project2.exe : fatal error LNK1120: 1 个无法解析的外部命令
+  Project2.vcxproj -> D:\Code2\Code.c\Project2\x64\Debug\Project2.exe

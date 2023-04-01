@@ -36,7 +36,7 @@ int main()
 	//不能用一下求数组的长度，在这里本质上arr是一个指针
 	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
 	int k = 7;
-	int sz = sizeof(arr) / size(arr[0]);
+	int sz = sizeof(arr) / sizeof(arr[0]);
 	int ret = binary_search(arr, k, sz);
 	if (ret == -1)
 	{
