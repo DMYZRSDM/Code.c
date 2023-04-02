@@ -8,47 +8,61 @@
 #include<time.h>
 #include"add.h"
 
-//冒泡排序
-void bubble_sort(int arr[], int sz)
-{
-	//确定冒泡排序的趟数
-	int i = 0;
-	for (i = 0; i < sz - 1; i++)
-	{
-		int flag = 1;//假设这一趟要排序的数据已经有序
-		//每一趟冒泡排序(是变化的)
-		int j = 0;
-		for (j = 0; j < sz - 1 - i; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				int tem = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tem;
-				flag == 0;
-			}
-		}
-		if (flag == 1)
-		{
-			break;
-		}
-	}
-}
-
+//sizeof(数组名)，计算的是整个数组的大小
+//&数组名，取出的是数组的地址
 int main()
 {
-	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int i = 0;
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	//对arr进行排序，排成升序
-	//arr是数组，我们对数组arr进行传参，实际上传递过去的是arr数组的首元素地址，应该在传参之前就算出来数组大小，然后再传参，也不能用Int*或者char*来传参，这样求数组长度时会发生错误
-	bubble_sort(arr, sz);//冒泡排序
-	for (i = 0; i < sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	int arr[] = {1,2,3,4};
+	printf("%p\n", arr);
+	printf("%p\n", arr+1);
+	printf("%p\n", &arr[0]);
+	printf("%p\n", &arr[0]+1);
+	printf("%p\n", &arr);
+	printf("%p\n", &arr+1);
+
 	return 0;
 }
+////冒泡排序
+//void bubble_sort(int arr[], int sz)
+//{
+//	//确定冒泡排序的趟数
+//	int i = 0;
+//	for (i = 0; i < sz - 1; i++)
+//	{
+//		int flag = 1;//假设这一趟要排序的数据已经有序
+//		//每一趟冒泡排序(是变化的)
+//		int j = 0;
+//		for (j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int tem = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tem;
+//				flag == 0;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			break;
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//对arr进行排序，排成升序
+//	//arr是数组，我们对数组arr进行传参，实际上传递过去的是arr数组的首元素地址，应该在传参之前就算出来数组大小，然后再传参，也不能用Int*或者char*来传参，这样求数组长度时会发生错误
+//	bubble_sort(arr, sz);//冒泡排序
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
 //打印二维数组
 //int main()
 //{
