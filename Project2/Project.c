@@ -8,20 +8,112 @@
 #include<time.h>
 #include"add.h"
 
-//sizeof(数组名)，计算的是整个数组的大小
-//&数组名，取出的是数组的地址
+//求一个整数存储在内存中的二进制中1的个数
+//方法1.（有局限性,若是负数就求不出来）
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int count = 0;
+//	while (num)
+//	{
+//		if (num % 2 == 1)
+//			count++;
+//		num = num / 2;
+//	}
+//	printf("二进制中1的个数为%d\n", count);
+//	return 0;
+//}
+//方法2.
+//int main()
+//{
+//	int num = 0;
+//	int count = 0;
+//	scanf("%d", &num);
+//	int i = 0;
+//	for (i = 0; i < 32; i++)
+//	{
+//		if (1 == ((num >> i) & 1))
+//			count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+// 方法3：
 int main()
 {
-	int arr[] = {1,2,3,4};
-	printf("%p\n", arr);
-	printf("%p\n", arr+1);
-	printf("%p\n", &arr[0]);
-	printf("%p\n", &arr[0]+1);
-	printf("%p\n", &arr);
-	printf("%p\n", &arr+1);
-
+	int num = 0;
+	scanf("%d", &num);
+	int i = 0;
+	int count = 0;
+	while (num)
+	{
+		count++;
+		num = num & (num - 1);
+	}
+	printf("%d\n", count);
 	return 0;
 }
+//不能用第三个临时变量，交换a和b的值
+//1.当a或者b过大时容易溢出，有限制
+//int main()
+//{
+//	/*int a = 3;
+//	int b = 5;
+//	a = a + b;
+//	b = a - b;
+//	a = a - b;*/
+//	return 0;
+//}
+//2.用操作符表示比较好
+//int main()
+//{
+//	int a = 3;
+//	int b = 5;
+//	a = a ^ b;
+//	b = b ^ a;
+//	a = a ^ b;
+//	printf("a = %d,b = %d\n", a,b);
+//	
+//	return 0;
+//
+//}
+//int main()
+//{
+//	//
+//	//整数的二进制表示有：原码，反码，补码
+//	//存储到内存的是补码
+//	int a = -16;
+//	//int b = a >> 3;//算术右移
+//	//printf("%d\n", b);
+//	int b = a << 1;
+//	printf("%d\n", b);
+//	int c = a ^ b;
+//	printf("%d\n", a);
+//	printf("%d\n", c);
+//	return 0;
+//}
+//操作符详解
+//int main()
+//{
+//	double a = 5 % 2;
+//	printf("%lf\n", a);
+//	return 0;
+//}
+//sizeof(数组名)，计算的是整个数组的大小
+//&数组名，取出的是数组的地址
+//int main()
+//{
+//	int arr[] = {1,2,3,4};
+//	printf("%p\n", arr);
+//	printf("%p\n", arr+1);
+//	printf("%p\n", &arr[0]);
+//	printf("%p\n", &arr[0]+1);
+//	printf("%p\n", &arr);
+//	printf("%p\n", &arr+1);
+//
+//	return 0;
+//}
 ////冒泡排序
 //void bubble_sort(int arr[], int sz)
 //{
