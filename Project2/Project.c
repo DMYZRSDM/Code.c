@@ -8,6 +8,12 @@
 #include<time.h>
 #include"add.h"
 
+//按位取反
+int main()
+{
+	int a = 0;
+	printf("%d\n", ~a);
+}
 //求一个整数存储在内存中的二进制中1的个数
 //方法1.（有局限性,若是负数就求不出来）
 //int main()
@@ -40,20 +46,20 @@
 //	return 0;
 //}
 // 方法3：
-int main()
-{
-	int num = 0;
-	scanf("%d", &num);
-	int i = 0;
-	int count = 0;
-	while (num)
-	{
-		count++;
-		num = num & (num - 1);
-	}
-	printf("%d\n", count);
-	return 0;
-}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int i = 0;
+//	int count = 0;
+//	while (num)
+//	{
+//		count++;
+//		num = num & (num - 1);
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
 //不能用第三个临时变量，交换a和b的值
 //1.当a或者b过大时容易溢出，有限制
 //int main()
