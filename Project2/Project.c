@@ -8,26 +8,45 @@
 #include<time.h>
 #include"add.h"
 
-//数组传参，传的是首元素的地址
-void test1(int arr[])
-{
-	printf("%d\n", (int)sizeof(arr));
-}
-void test2(char ch[])
-{
-	printf("%d\n", (int)sizeof(ch));
-}
 int main()
 {
-	int arr[10] = { 0 };
-	char ch[10] = { 0 };
-	printf("%d\n", (int)sizeof(arr));
-	printf("%d\n", (int)sizeof(ch));
-	test1(arr);
-	test2(ch);
 
 	return 0;
 }
+//int get_max(int x, int y)
+//{
+//	return x > y ? x : y;
+//}
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	//调用函数的时候的()就是函数调用操作符
+//	int max = get_max(a, b);
+//	printf("max = %d\n", max);
+//	return 0;
+//}
+//数组传参，传的是首元素的地址
+//void test1(int arr[])
+//{
+//	printf("%d\n", (int)sizeof(arr));
+//}
+//void test2(char ch[])
+//{
+//	printf("%d\n", (int)sizeof(ch));
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	char ch[10] = { 0 };
+//	printf("%d\n", (int)sizeof(arr));
+//	printf("%d\n", (int)sizeof(ch));
+//	test1(arr);
+//	test2(ch);
+//
+//	return 0;
+//}
 //按位取反
 //int main()
 //{
