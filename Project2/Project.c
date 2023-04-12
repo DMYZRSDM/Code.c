@@ -7,12 +7,124 @@
 #include<math.h>
 #include<time.h>
 #include"add.h"
-
+//把a和b按先大后小的顺序写出来(用指针方法来处理这个问题)
 int main()
 {
+	int* p1, * p2, * p, a, b;
+	scanf("%d,%d", &a, &b);
+	p1 = &a;
+	p2 = &b;
+	if (a < b)
+	{
+		p = p1;
+		p1 = p2;
+		p2 = p;
+	}
+	printf("%d,%d\n", *p1, *p2);
 
 	return 0;
 }
+//int main()
+//{
+//	int* p1, * p2, * p, a, b;
+//	printf("please enter two integer numbers:\n");
+//	scanf("%d,%d", &a, &b);
+//	p1 = &a;
+//	p2 = &b;
+//	if (a < b)
+//	{
+//		p = p1;
+//		p1 = p2;
+//		p2 = p;
+//	}
+//		printf("%d,%d\n", *p1, *p2);
+//	
+//	return 0;
+//}
+////int main()
+//{
+//	int a = 10;
+//	int b = 18;
+//	int* num1, * num2;
+//	num1 = &a;
+//	num2 = &b;
+//	printf("a = %d,b = %d\n", a, b);
+//	printf("a = %p,b = %p\n", num1, num2);
+//	printf("a = %d,b = %d\n", *num1, *num2);
+//	
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	char* p = arr;
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		*(p + i) = 1;
+//		printf("%d\n", arr[i]);
+//	}
+//	
+//
+//	return 0;
+//}
+//指针类型决定了指针进行解引用操作的时候，能够访问空间的大小
+//int* p,*p能够访问4个字节
+//char* p,*p能够访问1个字节
+//double* p,*p能够访问8个字节
+//int main()
+//{
+//	int a = 0x11223355;
+//	int* pa = &a;
+//	*pa = 0;
+//	char* pc = &a;
+//	*pc = 0;
+//	printf("%p\n", pa);
+//	printf("%p\n", pc);
+//	return 0;
+//}
+//错误的表达式
+//int main()
+//{
+//	int i = 10;
+//	i = (++i)+(i++)+(i++);
+//	printf("i = %d\n", i);
+//	return 0;
+//}
+//整形提升是按照变量的数据类型的符号位来提升的
+//int main()
+//{
+//	char c = 1;
+//	printf("%u\n", (int)sizeof(c));
+//	printf("%u\n", (int)sizeof(+c));
+//	printf("%u\n", (int)sizeof(!c));
+//	return 0;
+//}
+//创建一个结构体变量
+//struct Stu
+//{
+//	//成员变量
+//	char name[20];
+//	int age;
+//	char id[20];
+//};
+//
+//int main()
+//{
+//	int a = 10;
+//	//使用Struct Stu这个类型创建了一个学生对象s1，并且初始化
+//	struct Stu s1 = { "张三",20,"2019191919100" };
+//	struct Stu* ps = &s1;
+//	printf("%s\n", ps->name);
+//	printf("%d\n", ps->age);
+//	printf("%s\n", (*ps).name);
+//	printf("%d\n", (*ps).age);
+//	printf("%s\n", s1.name);
+//	printf("%d\n", s1.age);
+//	printf("%s\n", s1.id);
+//	//结构体变量.成员名
+//	return 0;
+//}
 //int get_max(int x, int y)
 //{
 //	return x > y ? x : y;
@@ -127,7 +239,7 @@ int main()
 //{
 //	//
 //	//整数的二进制表示有：原码，反码，补码
-//	//存储到内存的是补码
+//	//存储到内存的是补码，打印出来的是原码
 //	int a = -16;
 //	//int b = a >> 3;//算术右移
 //	//printf("%d\n", b);
