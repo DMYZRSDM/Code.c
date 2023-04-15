@@ -7,10 +7,67 @@
 #include<math.h>
 #include<time.h>
 #include"add.h"
+
+//int my_strlen(char* str)
+//{
+//	char* start = str;
+//	char* end = str;
+//	while (*end != 0)
+//	{
+//		end++;
+//	}
+//	return end - start;
+//}
+//int main()
+//{
+//	//strlen - 求字符串长度
+//	//递归 - - 模拟实现了strlen - 计数器的方式1，递归的方式
+//	char arr[] = "bit";
+//	int len = my_strlen(arr);
+//	printf("%d ", len);
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int* p = arr;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("% d", *p);
+//		p += 1;
+//	}
+//	return 0;
+//
+//}
+//如何规避野指针：
+// 1.指针初始化
+//int main()
+//{
+//	int b = 0;
+//	int a = 10;
+//	int* pa = &a;//初始化
+//	int* p = NULL;//NULL--用来初始化指针的，给指针赋值
+//	return 0;
+//}
+// 2.小心指针越界
+// 3.指针使用之前检查有效性
+//int main()
+//{
+//	int* p = NULL;
+//	int a = 10;
+//	p = &a;
+//	if (p != NULL)
+//	{
+//		*p = 20;
+//	}
+//	return 0;
+//}
 //把a和b按先大后小的顺序写出来(用指针方法来处理这个问题)
 int main()
 {
-	int* p1, * p2, * p, a, b;
+	int *p1, *p2, *p, a, b;
 	scanf("%d,%d", &a, &b);
 	p1 = &a;
 	p2 = &b;
@@ -20,8 +77,8 @@ int main()
 		p1 = p2;
 		p2 = p;
 	}
+	printf("%d,%d\n", a, b);
 	printf("%d,%d\n", *p1, *p2);
-
 	return 0;
 }
 //int main()
