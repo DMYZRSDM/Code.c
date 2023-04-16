@@ -890,7 +890,7 @@
 //	}
 //	printf("\ncount = %d\n", count);
 //	return 0;
-}
+//}
 //求闰年的个数和年份
 //int main()
 //{
