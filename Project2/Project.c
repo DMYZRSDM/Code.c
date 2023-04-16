@@ -866,30 +866,30 @@
 //	return 0;
 //}
 //求素数
-int main()
-{
-	int i = 0;
-	int count = 0;
-	for (i = 2; i < 101; i++)
-	{
-		//判断i是否为素数(两种方法)
-		//1.试除法(产生2->i-1)
-		int j = 0;
-		for (j = 2; j <=(i/2); j++)
-		{
-			if (i % j == 0)
-			{
-				break;
-			}
-		}
-		if (j >(i/2))
-		{
-			count++;
-			printf("% d", i);
-		}
-	}
-	printf("\ncount = %d\n", count);
-	return 0;
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 2; i < 101; i++)
+//	{
+//		//判断i是否为素数(两种方法)
+//		//1.试除法(产生2->i-1)
+//		int j = 0;
+//		for (j = 2; j <=(i/2); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (j >(i/2))
+//		{
+//			count++;
+//			printf("% d", i);
+//		}
+//	}
+//	printf("\ncount = %d\n", count);
+//	return 0;
 }
 //求闰年的个数和年份
 //int main()
