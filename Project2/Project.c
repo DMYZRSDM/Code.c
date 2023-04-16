@@ -8,6 +8,42 @@
 #include<time.h>
 #include"add.h"
 
+//int main()
+//{
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		*(p + i) = i;
+//		printf("% d", arr[i]);
+//		printf("% d", *(p + i));
+//	}
+//	printf("\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%p == == %p\n", p + i, &arr[i]);
+//	}
+//	return 0;
+//}
+//1.&arr-&数组名-数组名不是首元素的地址--数组名表示整个数组-&数组名表示的是取整个数组的地址
+//2.sizeof(arr) - sizeof(数组名) - 表示的是整个数组的大小
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	printf("%p\n", arr);
+//	printf("%p\n", arr + 1);
+//	printf("%p\n", &arr[0]);
+//	printf("%p\n", &arr[0] + 1);
+//	printf("%p\n", &arr);
+//	printf("%p\n", &arr + 1);
+//	return 0;
+//}
 //int my_strlen(char* str)
 //{
 //	char* start = str;
@@ -65,22 +101,22 @@
 //	return 0;
 //}
 //把a和b按先大后小的顺序写出来(用指针方法来处理这个问题)
-int main()
-{
-	int *p1, *p2, *p, a, b;
-	scanf("%d,%d", &a, &b);
-	p1 = &a;
-	p2 = &b;
-	if (a < b)
-	{
-		p = p1;
-		p1 = p2;
-		p2 = p;
-	}
-	printf("%d,%d\n", a, b);
-	printf("%d,%d\n", *p1, *p2);
-	return 0;
-}
+//int main()
+//{
+//	int *p1, *p2, *p, a, b;
+//	scanf("%d,%d", &a, &b);
+//	p1 = &a;
+//	p2 = &b;
+//	if (a < b)
+//	{
+//		p = p1;
+//		p1 = p2;
+//		p2 = p;
+//	}
+//	printf("%d,%d\n", a, b);
+//	printf("%d,%d\n", *p1, *p2);
+//	return 0;
+//}
 //int main()
 //{
 //	int* p1, * p2, * p, a, b;
@@ -830,31 +866,31 @@ int main()
 //	return 0;
 //}
 //求素数
-//int main()
-//{
-//	int i = 0;
-//	int count = 0;
-//	for (i = 101; i < 201; i+=2)
-//	{
-//		//判断i是否为素数(两种方法)
-//		//1.试除法(产生2->i-1)
-//		int j = 0;
-//		for (j = 2; j <=(i/2); j++)
-//		{
-//			if (i % j == 0)
-//			{
-//				break;
-//			}
-//		}
-//		if (j >(i/2))
-//		{
-//			count++;
-//			printf("% d", i);
-//		}
-//	}
-//	printf("\ncount = %d\n", count);
-//	return 0;
-//}
+int main()
+{
+	int i = 0;
+	int count = 0;
+	for (i = 2; i < 101; i++)
+	{
+		//判断i是否为素数(两种方法)
+		//1.试除法(产生2->i-1)
+		int j = 0;
+		for (j = 2; j <=(i/2); j++)
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if (j >(i/2))
+		{
+			count++;
+			printf("% d", i);
+		}
+	}
+	printf("\ncount = %d\n", count);
+	return 0;
+}
 //求闰年的个数和年份
 //int main()
 //{
