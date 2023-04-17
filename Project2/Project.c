@@ -7,12 +7,86 @@
 #include<math.h>
 #include<time.h>
 #include"add.h"
+#include"game.h"
 
-//int main()
-//{
-//
-//	return 0;
-//}
+void menu()
+{
+	printf("******1.play    0.exit******\n");
+}
+//游戏的整个算法实现
+void game()
+{
+	char ret = 0;
+	//数组--存放走出的棋盘信息
+	char board[ROW][COL] = { 0 };
+	//初始化棋盘（若不初始化，数组中的内容就不能清除）
+	InitBoard(board, ROW, COL);
+	//打印棋盘
+	DisplayBoard(board, ROW, COL);
+	//下棋
+	while (1)
+	{
+		//玩家下棋
+		PlayerMove(board,ROW,COL);
+		DisplayBoard(board, ROW, COL);
+		//判断玩家是否赢
+		ret = IsWin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break; 
+		}
+		//电脑下棋
+		ComputerMove(board,ROW,COL);
+		DisplayBoard(board, ROW, COL);
+		ret = IsWin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+	}
+	if (ret == '*')
+	{
+		printf("玩家赢\n");
+	}
+	else if (ret == '#')
+	{
+		printf("电脑赢");
+	}
+	else
+	{
+		printf("平局");
+	}
+}
+void test()
+{
+	int input = 0;
+	srand((unsigned)time(NULL));
+	do
+	{
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 2:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("选择错误，重新选择\n");
+			break;
+		}
+	} while (input);
+	
+	return 0;
+}
+int main()
+{	
+	test();
+	return 0;
+}
 //int main()
 //{
 //	int arr[10] = { 0 };
@@ -367,7 +441,7 @@
 ////冒泡排序
 //void bubble_sort(int arr[], int sz)
 //{
-//	//确定冒泡排序的趟数
+	//确定冒泡排序的趟数
 //	int i = 0;
 //	for (i = 0; i < sz - 1; i++)
 //	{
@@ -390,14 +464,13 @@
 //		}
 //	}
 //}
-//
 //int main()
 //{
 //	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
 //	int i = 0;
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	//对arr进行排序，排成升序
-//	//arr是数组，我们对数组arr进行传参，实际上传递过去的是arr数组的首元素地址，应该在传参之前就算出来数组大小，然后再传参，也不能用Int*或者char*来传参，这样求数组长度时会发生错误
+//	//arr是数组，我们对数组arr进行传参，实际上传递过去的是arr数组的首元素地址，应该在传参之前就算出来数组大小，然后再传参，也不能用int*或者char*来传参，这样求数组长度时会发生错误
 //	bubble_sort(arr, sz);//冒泡排序
 //	for (i = 0; i < sz; i++)
 //	{
