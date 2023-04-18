@@ -9,84 +9,141 @@
 #include"add.h"
 #include"game.h"
 
-void menu()
-{
-	printf("******1.play    0.exit******\n");
-}
-//游戏的整个算法实现
-void game()
-{
-	char ret = 0;
-	//数组--存放走出的棋盘信息
-	char board[ROW][COL] = { 0 };
-	//初始化棋盘（若不初始化，数组中的内容就不能清除）
-	InitBoard(board, ROW, COL);
-	//打印棋盘
-	DisplayBoard(board, ROW, COL);
-	//下棋
-	while (1)
-	{
-		//玩家下棋
-		PlayerMove(board,ROW,COL);
-		DisplayBoard(board, ROW, COL);
-		//判断玩家是否赢
-		ret = IsWin(board, ROW, COL);
-		if (ret != 'C')
-		{
-			break; 
-		}
-		//电脑下棋
-		ComputerMove(board,ROW,COL);
-		DisplayBoard(board, ROW, COL);
-		ret = IsWin(board, ROW, COL);
-		if (ret != 'C')
-		{
-			break;
-		}
-	}
-	if (ret == '*')
-	{
-		printf("玩家赢\n");
-	}
-	else if (ret == '#')
-	{
-		printf("电脑赢");
-	}
-	else
-	{
-		printf("平局");
-	}
-}
-void test()
-{
-	int input = 0;
-	srand((unsigned)time(NULL));
-	do
-	{
-		menu();
-		printf("请选择:>");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 1:
-			game();
-			break;
-		case 2:
-			printf("退出游戏\n");
-			break;
-		default:
-			printf("选择错误，重新选择\n");
-			break;
-		}
-	} while (input);
-	
-	return 0;
-}
-int main()
-{	
-	test();
-	return 0;
-}
+//求闰年
+//int main()
+//{
+//	int year = 0;
+//	for (year = 1900; year <= 2000; year++)
+//	{
+//		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+//			printf("%d年是闰年\n", year);
+//		else
+//			printf("%d年不是闰年\n", year);
+//	}
+//	return 0;
+//}
+//求两个数的最大公约数
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	int a = 0;
+//	scanf("%d%d", &m, &n);
+//	while(1)
+//	{
+//		if (m % n != 0)
+//		{
+//			a = m % n;
+//			m = n;
+//			n = a;
+//		}
+//		if (m % n == 0)
+//		{
+//			break;
+//		}
+//	}
+//	
+//	
+//	printf("%d\n", n);
+//	return 0;
+//}
+//输入10个数，求其最大值
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	int max = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//		if (max < arr[i])
+//		{
+//			max = arr[i];
+//		}
+//	}
+//	
+//	printf("%d\n", max);
+//
+//	return 0;
+//}
+//void menu()
+//{
+//	printf("******1.play    0.exit******\n");
+//}
+////游戏的整个算法实现
+//void game()
+//{
+//	char ret = 0;
+//	//数组--存放走出的棋盘信息
+//	char board[ROW][COL] = { 0 };
+//	//初始化棋盘（若不初始化，数组中的内容就不能清除）
+//	InitBoard(board, ROW, COL);
+//	//打印棋盘
+//	DisplayBoard(board, ROW, COL);
+//	//下棋
+//	while (1)
+//	{
+//		//玩家下棋
+//		PlayerMove(board,ROW,COL);
+//		DisplayBoard(board, ROW, COL);
+//		//判断玩家是否赢
+//		ret = IsWin(board, ROW, COL);
+//		if (ret != 'C')
+//		{
+//			break; 
+//		}
+//		//电脑下棋
+//		ComputerMove(board,ROW,COL);
+//		DisplayBoard(board, ROW, COL);
+//		ret = IsWin(board, ROW, COL);
+//		if (ret != 'C')
+//		{
+//			break;
+//		}
+//	}
+//	if (ret == '*')
+//	{
+//		printf("玩家赢\n");
+//	}
+//	else if (ret == '#')
+//	{
+//		printf("电脑赢");
+//	}
+//	else
+//	{
+//		printf("平局");
+//	}
+//}
+//void test()
+//{
+//	int input = 0;
+//	srand((unsigned)time(NULL));
+//	do
+//	{
+//		menu();
+//		printf("请选择:>");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			game();
+//			break;
+//		case 2:
+//			printf("退出游戏\n");
+//			break;
+//		default:
+//			printf("选择错误，重新选择\n");
+//			break;
+//		}
+//	} while (input);
+//	
+//	return 0;
+//}
+//int main()
+//{	
+//	test();
+//	return 0;
+//}
 //int main()
 //{
 //	int arr[10] = { 0 };
