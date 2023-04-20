@@ -62,7 +62,7 @@ void PlayerMove(char board[ROW][COL], int row, int col)
 			if (board[x - 1][y - 1] == ' ')
 			{
 				board[x - 1][y - 1] = '*';
-					break;
+				break;
 			}
 			else
 			{
