@@ -2,7 +2,7 @@
 #pragma warning(disable:6031)
 #include<stdio.h>
 #include"Saolei.h"
-
+//
 void menu()
 {
 	printf("****1.play  0. exit****\n");
