@@ -9,11 +9,74 @@
 #include"add.h"
 #include"game.h"
 
+int fac(int n)
+{
+	if (n < 0)
+	{
+		printf("input error");
+	}
+	if (n == 0)
+		return 1;
+	else
+		return(n * fac(n - 1));
+}
 int main()
 {
-
+	int n,num;
+	printf("input an integer number:");
+	scanf("%d", &n);
+	num = fac(n);
+	printf("%d",num);
 	return 0;
 }
+//int num(int x)
+//{
+//	/*int i;
+//	int j = 10;
+//	for (i = 0;i < 5;i++)
+//	{
+//		j += 2;
+//	}
+//	*/
+//	int j;
+//	if (x == 1)
+//		j = 10;
+//	else
+//		j = num(x - 1) + 2;
+//	return j;
+//}
+//int main()
+//{
+//	int num(int a);
+//	//int age = num(5);
+//	printf("%d", num(5));
+//	return 0;
+//}
+//用函数调用求 四个数中的最大值
+//int max2(int c, int d)
+//{
+//	return(c > d ? c : d);
+//}
+//int max4(int a, int b, int c, int d)
+//{
+//	return(max2(max2(max2(a, b), c), d));
+//	/*int m;
+//	int max2(int a, int b);
+//	m = max2(x1, x2);
+//	m = max2(m, x3);
+//	m = max2(m, x4);
+//	return m;*/
+//}
+//
+//int main()
+//{
+//	int max4(int x1, int x2, int x3, int x4);
+//	int a, b, c, d, max;
+//	scanf("%d%d%d%d", &a, &b, &c, &d);
+//	max = max4(a, b, c, d);
+//	printf("%d", max);
+//	return 0;
+//}
 //求闰年
 //int main()
 //{
