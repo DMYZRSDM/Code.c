@@ -3,30 +3,38 @@
 #include<stdio.h>
 #include"Saolei.h"
 //
-//求一个3*4的二维数组元素中的最大值(以数组名为作函数参数的时候，调用的数组的首地址，当列数相同时，那么实参和形参N行元素的地址相同，改变形参的数，实参的数也相应的改变)
-int max_value(int a[][4])
-{
-	int i, j, max;
-	max = a[0][0];
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 4; j++)
-		{
-			if (max < a[i][j])
-			{
-				max = a[i][j];
-			}
-		}
-	}
-	return(max);
-}
 int main()
 {
-	int max_value(int arr[][4]);
-	int arr[3][4] = { {2,3,34,54},{234,123,1234,45},{4,3,1,5} };
-	printf("Max value is %d\n", max_value(arr));
+	int a = 10;
+	int *pointer_a;
+	pointer_a = &a;
+	printf("%d", *pointer_a);
 	return 0;
 }
+//求一个3*4的二维数组元素中的最大值(以数组名为作函数参数的时候，调用的数组的首地址，当列数相同时，那么实参和形参N行元素的地址相同，改变形参的数，实参的数也相应的改变)
+//int max_value(int a[][4])
+//{
+//	int i, j, max;
+//	max = a[0][0];
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			if (max < a[i][j])
+//			{
+//				max = a[i][j];
+//			}
+//		}
+//	}
+//	return(max);
+//}
+//int main()
+//{
+//	int max_value(int arr[][4]);
+//	int arr[3][4] = { {2,3,34,54},{234,123,1234,45},{4,3,1,5} };
+//	printf("Max value is %d\n", max_value(arr));
+//	return 0;
+//}
 
 //int main()
 //{
