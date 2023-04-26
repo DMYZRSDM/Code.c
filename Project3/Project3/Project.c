@@ -3,14 +3,45 @@
 #include<stdio.h>
 #include"Saolei.h"
 //
+float MAX, MIN;
+float average(float array[], int n)
+{
+	int i;
+	float aver, sum = array[0];
+	MAX = MIN = array[0];
+	for (i = 1; i < n; i++)
+	{
+		if (array[i] > MAX)
+			MAX = array[i];
+		else if (array[i] < MIN)
+			MIN = array[i];
+		sum += array[i];
+	}
+	aver = sum / n;
+	return(aver);
+}
 int main()
 {
-	int a = 10;
-	int *pointer_a;
-	pointer_a = &a;
-	printf("%d", *pointer_a);
+	float average(float array[], int n);
+	float ave, score[10];
+	int i;
+	printf("Please enter 10 scores");
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%f", &score[i]);
+	}
+	ave = average(score, 10);
+	printf("max = %6.2f\nmin = %6.2f\naverage = %6.2f\n", MAX, MIN, ave);
 	return 0;
 }
+//int main()
+//{
+//	int a = 10;
+//	int *pointer_a;
+//	pointer_a = &a;
+//	printf("%d", *pointer_a);
+//	return 0;
+//}
 //求一个3*4的二维数组元素中的最大值(以数组名为作函数参数的时候，调用的数组的首地址，当列数相同时，那么实参和形参N行元素的地址相同，改变形参的数，实参的数也相应的改变)
 //int max_value(int a[][4])
 //{
