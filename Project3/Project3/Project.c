@@ -3,37 +3,63 @@
 #include<stdio.h>
 #include"Saolei.h"
 //
-float MAX, MIN;
-float average(float array[], int n)
+void swap(int* a, int* b)
 {
-	int i;
-	float aver, sum = array[0];
-	MAX = MIN = array[0];
-	for (i = 1; i < n; i++)
-	{
-		if (array[i] > MAX)
-			MAX = array[i];
-		else if (array[i] < MIN)
-			MIN = array[i];
-		sum += array[i];
-	}
-	aver = sum / n;
-	return(aver);
+	int temp = 0;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 int main()
 {
-	float average(float array[], int n);
-	float ave, score[10];
-	int i;
-	printf("Please enter 10 scores");
-	for (i = 0; i < 10; i++)
+	void swap(int* p1, int* p2);
+	int a = 0;
+	int b = 0;
+	int* pointer_1;
+	int* pointer_2;
+	printf("please enter a and b:");
+	scanf("%d,%d", &a, &b);
+	pointer_1 = &a;
+	pointer_2 = &b;
+	if (a < b)
 	{
-		scanf("%f", &score[i]);
+		swap(pointer_1, pointer_2);
 	}
-	ave = average(score, 10);
-	printf("max = %6.2f\nmin = %6.2f\naverage = %6.2f\n", MAX, MIN, ave);
+	printf("max = %d,min = %d\n", a, b);
+
 	return 0;
 }
+//float MAX, MIN;
+//float average(float array[], int n)
+//{
+//	int i;
+//	float aver, sum = array[0];
+//	MAX = MIN = array[0];
+//	for (i = 1; i < n; i++)
+//	{
+//		if (array[i] > MAX)
+//			MAX = array[i];
+//		else if (array[i] < MIN)
+//			MIN = array[i];
+//		sum += array[i];
+//	}
+//	aver = sum / n;
+//	return(aver);
+//}
+//int main()
+//{
+//	float average(float array[], int n);
+//	float ave, score[10];
+//	int i;
+//	printf("Please enter 10 scores");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%f", &score[i]);
+//	}
+//	ave = average(score, 10);
+//	printf("max = %6.2f\nmin = %6.2f\naverage = %6.2f\n", MAX, MIN, ave);
+//	return 0;
+//}
 //int main()
 //{
 //	int a = 10;
