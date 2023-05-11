@@ -11,6 +11,10 @@
 
 int main()
 {
+	return 0;
+}
+int main()
+{
 	int a[10] = { 0 };
 	int i = 0;
 	printf("Please enter/input 10 integer numbers:");
