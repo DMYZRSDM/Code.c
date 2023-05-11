@@ -11,7 +11,14 @@
 
 int main()
 {
-
+	int a[10] = { 0 };
+	int i = 0;
+	printf("Please enter/input 10 integer numbers:");
+	for (i = 0; i < 10; i++)
+		scanf("%d", &a[i]);
+	for (i = 0; i < 10; i++)
+		printf("% d", a[i]);
+	printf("%\n");
 	return 0;
 }
 //void swap(int* pt1, int* pt2)
