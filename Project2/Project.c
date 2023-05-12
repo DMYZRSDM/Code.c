@@ -11,22 +11,85 @@
 
 int main()
 {
-
-
-	return 0;
-}
-int main()
-{
-	int a[10] = { 0 };
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	int* p = arr;
+	/*int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", *(p + i));
+	}*/
+	int(*pa)[10] = &arr;
 	int i = 0;
-	printf("Please enter/input 10 integer numbers:");
 	for (i = 0; i < 10; i++)
-		scanf("%d", &a[i]);
+	{
+		printf("%d ", *(*pa + i));
+	}
+	printf("\n");
 	for (i = 0; i < 10; i++)
-		printf("% d", a[i]);
-	printf("%\n");
+	{
+		printf("%d ", (*pa)[i]);
+	}
 	return 0;
 }
+//int main()
+//{
+//	/*char* p = "abcdef";
+//	*p = 'w';
+//	printf("%s\n", p);*/
+//	char arr1[] = "abc";
+//	char arr2[] = "abc";
+//	char* p1 = "abc";
+//	char* p2 = "abc";
+//	//if (arr1 == arr2)
+//	if(p1 = p2)
+//		printf("hehe\n");
+//	else
+//		printf("haha\n");
+//	return 0;
+//}
+//void test(int** ptr)
+//{
+//	printf("num = %d\n", **ptr);
+//}
+//int main()
+//{
+//	int n = 10;
+//	int* p = &n;
+//	int** pp = &p;
+//	test(pp);
+//	test(&p);
+//	return 0;
+//}
+//void print(int* p, int* sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d\n",*(p+i));
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9 };
+//	int* p = arr;
+//	int sz = 0;
+//	sz = sizeof(arr) / sizeof(arr[0]);
+//	//一级指针p,传给参数
+//	print(p, sz);
+//	return 0;
+//}
+//int main()
+//{
+//	int a[10] = { 0 };
+//	int i = 0;
+//	printf("Please enter/input 10 integer numbers:");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", &a[i]);
+//	for (i = 0; i < 10; i++)
+//		printf("% d", a[i]);
+//	printf("%\n");
+//	return 0;
+//}
 //void swap(int* pt1, int* pt2)
 //{
 //	int temp = 0;
