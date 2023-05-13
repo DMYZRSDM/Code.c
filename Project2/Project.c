@@ -11,26 +11,40 @@
 
 int main()
 {
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
-	int* p = arr;
-	/*int i = 0;
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", *(p + i));
-	}*/
-	int(*pa)[10] = &arr;
 	int i = 0;
+	int arr[10] = { 0 };
+	int* p = arr;
+	printf("please enter 10 integer numbers:>");
 	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", *(*pa + i));
-	}
+		scanf("%d", p++);
+	p = arr;
+	for (i = 0; i < 10; i++, p++)
+		printf("%d ", *p);
 	printf("\n");
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", (*pa)[i]);
-	}
 	return 0;
 }
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+//	int* p = arr;
+//	/*int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	}*/
+//	int(*pa)[10] = &arr;
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(*pa + i));
+//	}
+//	printf("\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", (*pa)[i]);
+//	}
+//	return 0;
+//}
 //int main()
 //{
 //	/*char* p = "abcdef";
