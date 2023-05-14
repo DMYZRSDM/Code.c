@@ -8,21 +8,41 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-
-int main()
+void print1(int(*p)[5], int x, int y)
 {
 	int i = 0;
-	int arr[10] = { 0 };
-	int* p = arr;
-	printf("please enter 10 integer numbers:>");
-	for (i = 0; i < 10; i++)
-		scanf("%d", p++);
-	p = arr;
-	for (i = 0; i < 10; i++, p++)
-		printf("%d ", *p);
-	printf("\n");
+	for (i = 0; i < x; i++)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			printf("%d ", *(*(p + i) + j));
+			printf("%d ", (*(p + i))[j]);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	void print1(int(*p)[5], int x, int y);
+	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+	print1(arr, 3, 5);
 	return 0;
 }
+//int main()
+//{
+//	int i = 0;
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	printf("please enter 10 integer numbers:>");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", p++);
+//	p = arr;
+//	for (i = 0; i < 10; i++, p++)
+//		printf("%d ", *p);
+//	printf("\n");
+//	return 0;
+//}
 //int main()
 //{
 //	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
