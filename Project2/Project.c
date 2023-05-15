@@ -8,27 +8,129 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-void print1(int(*p)[5], int x, int y)
+//用指针交换数组元素
+void inv(int* x, int n)
 {
-	int i = 0;
-	for (i = 0; i < x; i++)
+	int* p;
+	int temp = 0;
+	int* i;
+	int* j;
+	int m = (n - 1) / 2;
+	i = x; j = x + n - 1; p = x + m;
+	for (; i <= p; i++, j--)
 	{
-		int j = 0;
-		for (j = 0; j < y; j++)
-		{
-			printf("%d ", *(*(p + i) + j));
-			printf("%d ", (*(p + i))[j]);
-		}
-		printf("\n");
+		temp = *i;
+		*i = *j;
+		*j = temp;
 	}
 }
 int main()
 {
-	void print1(int(*p)[5], int x, int y);
-	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
-	print1(arr, 3, 5);
+	void inv(int* x, int n);
+	int i = 0;
+	int a[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	printf("The orginal array:>\n");
+	for (i = 0; i < 10; i++)
+		printf("%d ", a[i]);
+	printf("\nThe array has been inverted:>\n");
+	inv(a, 10);
+	for (i = 0; i < 10; i++)
+		printf("%d ", a[i]);
 	return 0;
 }
+//交换数组元素
+//void inv(int x[], int n)
+//{
+//	int temp = 0;
+//	int j = 0;
+//	for (j = 0; j < n/2; j++)
+//	{
+//		temp = x[j];
+//		x[j] = x[n - j-1];
+//		x[n - j-1] = temp;
+//	}
+//}
+//int main()
+//{
+//	void inv(int x[], int n);
+//	int i = 0;
+//	int a[10] = { 1,3,5,6,8,2,4,7,8,10 };
+//	printf("The original array:>\n");
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", a[i]);
+//	printf("\nThe array has been inverted:>\n");
+//	inv(a, 10);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int a[10] = { 0 };
+//	int* p = a;
+//	printf("Please enter 10 integer numbers:>\n");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", p++);
+//	p = a;
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", *(p++));
+//	printf("\n");
+//	return 0;
+//}
+//int main()
+//{
+//	int a[10] = { 0 };
+//	int* p;
+//	int i = 0;
+//	printf("Please input integer numbers:>");
+//	/*for (i = 0; i < 10; i++)
+//		scanf("%d", a+i);*/
+//	for (p = a; p < (a + 10); p++)
+//		scanf("%d", p);
+//	for (p = a; p < (a + 10); p++)
+//		printf("%d ", *p);
+//	printf("\n");
+//	return 0;
+//}
+//int main()
+//{
+//	int a[10] = { 0 };
+//	int i = 0;
+//	printf("Please enter 10 integer numbers:>");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", a + i);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(a + i));
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//void print1(int(*p)[5], int x, int y)
+//{
+//	int i = 0;
+//	for (i = 0; i < x; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < y; j++)
+//		{
+//			printf("%d ", *(*(p + i) + j));
+//			printf("%d ", (*(p + i))[j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	void print1(int(*p)[5], int x, int y);
+//	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+//	print1(arr, 3, 5);
+//	return 0;
+//}
 //int main()
 //{
 //	int i = 0;
