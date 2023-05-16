@@ -8,36 +8,105 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-//用指针交换数组元素
-void inv(int* x, int n)
+void sort(int x[], int n)
 {
-	int* p;
-	int temp = 0;
-	int* i;
-	int* j;
-	int m = (n - 1) / 2;
-	i = x; j = x + n - 1; p = x + m;
-	for (; i <= p; i++, j--)
+	int i, j, k, t;
+	for (i = 0; i < n - 1; i++)
 	{
-		temp = *i;
-		*i = *j;
-		*j = temp;
+		k = i;
+		for (j = i + 1; j < n; j++)
+		{
+			if (x[j] > x[k])
+			{
+				k = j;
+				if (k != i)
+				{
+					t = x[i]; x[i] = x[k]; x[k] = t;
+				}
+			}
+		}
 	}
 }
 int main()
 {
-	void inv(int* x, int n);
+	void sort(int x[], int n);
 	int i = 0;
-	int a[10] = { 1,2,3,4,5,6,7,8,9,0 };
-	printf("The orginal array:>\n");
+	int* p;
+	int a[10] = { 0 };
+	p = a;
+	printf("Please enter 10 integer numbers:\n");
 	for (i = 0; i < 10; i++)
-		printf("%d ", a[i]);
-	printf("\nThe array has been inverted:>\n");
-	inv(a, 10);
-	for (i = 0; i < 10; i++)
-		printf("%d ", a[i]);
+		scanf("%d", p++);
+	p = a;
+	sort(p, 10);
+	for (p = a, i = 0; i < 10; i++)
+	{
+		printf("%d ", *p);
+		p++;
+	}
+	printf("\n");
 	return 0;
 }
+//void inv(int* x, int n)
+//{
+//	int* p, * i, * j;
+//	int temp = 0;
+//	i = x; j = x + n - 1; p = x + (n / 2);
+//	for (; i <= p; i++, j--)
+//	{
+//		temp = *i;
+//		*i = *j;
+//		*j = temp;
+//	}
+//}
+//int main()
+//{
+//	void inv(int* x, int n);
+//	int i = 0;
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	printf("The original array:>\n");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", p++);
+//	printf("\n");
+//	p = arr;
+//	inv(p, 10);
+//	printf("The array has been inverted:\n");
+//	for (p = arr; p < arr + 10; p++)
+//		printf("%d ", *p);
+//	printf("\n");
+//	return 0;
+//}
+//用指针交换数组元素
+//void inv(int* x, int n)
+//{
+//	int* p;
+//	int temp = 0;
+//	int* i;
+//	int* j;
+//	int m = (n - 1) / 2;
+//	i = x; j = x + n - 1; p = x + m;
+//	for (; i <= p; i++, j--)
+//	{
+//		temp = *i;
+//		*i = *j;
+//		*j = temp;
+//	}
+//}
+//int main()
+//{
+//	void inv(int* x, int n);
+//	int i = 0;
+//	int a[10] = { 1,2,3,4,5,6,7,8,9,0 };
+//	printf("The orginal array:>\n");
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", a[i]);
+//	printf("\nThe array has been inverted:>\n");
+//	inv(a, 10);
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", a[i]);
+//	return 0;
+//}
 //交换数组元素
 //void inv(int x[], int n)
 //{
