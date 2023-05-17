@@ -8,45 +8,58 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-void sort(int x[], int n)
-{
-	int i, j, k, t;
-	for (i = 0; i < n - 1; i++)
-	{
-		k = i;
-		for (j = i + 1; j < n; j++)
-		{
-			if (x[j] > x[k])
-			{
-				k = j;
-				if (k != i)
-				{
-					t = x[i]; x[i] = x[k]; x[k] = t;
-				}
-			}
-		}
-	}
-}
 int main()
 {
-	void sort(int x[], int n);
-	int i = 0;
-	int* p;
-	int a[10] = { 0 };
-	p = a;
-	printf("Please enter 10 integer numbers:\n");
-	for (i = 0; i < 10; i++)
-		scanf("%d", p++);
-	p = a;
-	sort(p, 10);
-	for (p = a, i = 0; i < 10; i++)
-	{
-		printf("%d ", *p);
-		p++;
-	}
-	printf("\n");
-	return 0;
+	int a[3][4] = { 1,2,3,4,5,6,7,8,9,0,12,11 };
+	printf("%d,%d\n",a,*a);
+	printf("%d,%d\n",a[0],*(a + 0));
+	printf("%d,%d\n",&a[0],&a[0][0]);
+	printf("%d,%d\n",a[1],a + 1);
+	printf("%d,%d\n",&a[1][0],*(a + 1) + 0);
+	printf("%d,%d\n",a[2],*(a + 2));
+	printf("%d,%d\n",&a[2],a + 2);
+	printf("%d,%d\n",a[1][0], *(*(a + 1) + 0));
+	printf("%d,%d\n",*a[2], *(*(a + 2) + 0));
 }
+//void sort(int x[], int n)
+//{
+//	int i, j, k, t;
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		k = i;
+//		for (j = i + 1; j < n; j++)
+//		{
+//			if (x[j] > x[k])
+//			{
+//				k = j;
+//				if (k != i)
+//				{
+//					t = x[i]; x[i] = x[k]; x[k] = t;
+//				}
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	void sort(int x[], int n);
+//	int i = 0;
+//	int* p;
+//	int a[10] = { 0 };
+//	p = a;
+//	printf("Please enter 10 integer numbers:\n");
+//	for (i = 0; i < 10; i++)
+//		scanf("%d", p++);
+//	p = a;
+//	sort(p, 10);
+//	for (p = a, i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *p);
+//		p++;
+//	}
+//	printf("\n");
+//	return 0;
+//}
 //void inv(int* x, int n)
 //{
 //	int* p, * i, * j;
