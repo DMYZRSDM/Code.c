@@ -8,19 +8,54 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
+
 int main()
 {
-	int a[3][4] = { 1,2,3,4,5,6,7,8,9,0,12,11 };
-	printf("%d,%d\n",a,*a);
-	printf("%d,%d\n",a[0],*(a + 0));
-	printf("%d,%d\n",&a[0],&a[0][0]);
-	printf("%d,%d\n",a[1],a + 1);
-	printf("%d,%d\n",&a[1][0],*(a + 1) + 0);
-	printf("%d,%d\n",a[2],*(a + 2));
-	printf("%d,%d\n",&a[2],a + 2);
-	printf("%d,%d\n",a[1][0], *(*(a + 1) + 0));
-	printf("%d,%d\n",*a[2], *(*(a + 2) + 0));
+	int a[3][4] = { 1.2,3.4,5.6,7.8,9,0,11,12 };
+	int(*p)[4];
+	int i = 0;
+	int j = 0;
+	p = a;
+	printf("Please enter row and colum:");
+	scanf("%d,%d", &i, &j);
+	printf("a[%d,%d] = %d\n", i, j, *((p + i) + j));
+	return 0;
 }
+//int main()
+//{
+//	int a[3][4] = { 1,2,3,4,5,6,7,8,9,0,12,11 };
+//	int* p;
+//	for (p = a[0]; p < a[0] + 12; p++)
+//	{
+//		if ((p - a[0]) % 4 == 0)
+//			printf("\n");
+//			printf("%d ", *p);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//int main()
+//{
+//	char* p = "abcdef";
+//	*p = 'w';
+//	printf("%s\n", p);
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int a[3][4] = { 1,2,3,4,5,6,7,8,9,0,12,11 };
+//	printf("%d,%d\n",a,*a);
+//	printf("%d,%d\n",a[0],*(a + 0));
+//	printf("%d,%d\n",&a[0],&a[0][0]);
+//	printf("%d,%d\n",a[1],a + 1);
+//	printf("%d,%d\n",&a[1][0],*(a + 1) + 0);
+//	printf("%d,%d\n",a[2],*(a + 2));
+//	printf("%d,%d\n",&a[2],a + 2);
+//	printf("%d,%d\n",a[1][0], *(*(a + 1) + 0));
+//	printf("%d,%d\n",*a[2], *(*(a + 2) + 0));
+//	return 0;
+//}
 //void sort(int x[], int n)
 //{
 //	int i, j, k, t;
