@@ -8,7 +8,10 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-
+int main()
+{
+	return 0;
+}
 int main()
 {
 	int a[3][4] = { 1.2,3.4,5.6,7.8,9,0,11,12 };
