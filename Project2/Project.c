@@ -8,25 +8,38 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-int main()
+void copy_string(char* from, char* to)
 {
-	int i = 0;
-	for (i = 0; i < 10; i++)
-		printf("%d", i);
-	return 0;
+	for (; *from != '0'; from++, to++)
+	{
+		*to = *from;
+	}
+	*to = 0;
 }
 int main()
 {
-	int a[3][4] = { 1.2,3.4,5.6,7.8,9,0,11,12 };
-	int(*p)[4];
-	int i = 0;
-	int j = 0;
-	p = a;
-	printf("Please enter row and colum:");
-	scanf("%d,%d", &i, &j);
-	printf("a[%d,%d] = %d\n", i, j, *((p + i) + j));
+	void copy_string(char* from, char* to);
+	char* a = "I am a teacher";
+	char b[] = "You are a student.";
+	char* p = b;
+	printf("string a =%s\nstring b = %s\n", a, b);
+	printf("\n copy string a to string b:\n");
+	copy_string(a, p);
+	printf("string a = %s\n string b = %s\n", a, b);
 	return 0;
 }
+//int main()
+//{
+//	int a[3][4] = { 1.2,3.4,5.6,7.8,9,0,11,12 };
+//	int(*p)[4];
+//	int i = 0;
+//	int j = 0;
+//	p = a;
+//	printf("Please enter row and colum:");
+//	scanf("%d,%d", &i, &j);
+//	printf("a[%d,%d] = %d\n", i, j, *((p + i) + j));
+//	return 0;
+//}
 //int main()
 //{
 //	int a[3][4] = { 1,2,3,4,5,6,7,8,9,0,12,11 };
