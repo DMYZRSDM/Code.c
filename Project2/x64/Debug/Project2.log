@@ -1,2 +1,5 @@
 ﻿  Project.c
-  Project2.vcxproj -> D:\Code2\Code.c\Project2\x64\Debug\Project2.exe
+D:\Code2\Code.c\Project2\Project.c(12,5): error C2059: 语法错误:“<parameter-list>”
+D:\Code2\Code.c\Project2\Project.c(23,6): error C2059: 语法错误:“<parameter-list>”
+D:\Code2\Code.c\Project2\Project.c(28,9): error C2065: “max”: 未声明的标识符
+D:\Code2\Code.c\Project2\Project.c(28,9): warning C4047: “=”:“int (__cdecl *)(int,int)”与“int”的间接级别不同

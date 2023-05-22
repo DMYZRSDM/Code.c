@@ -8,26 +8,50 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-void copy_string(char* from, char* to)
+
+int max(int x, int y)
 {
-	for (; *from != '0'; from++, to++)
-	{
-		*to = *from;
-	}
-	*to = 0;
+	int z = 0;
+	if (x > y)
+		z = x;
+	else
+		z = y;
+	return(z);
 }
 int main()
 {
-	void copy_string(char* from, char* to);
-	char* a = "I am a teacher";
-	char b[] = "You are a student.";
-	char* p = b;
-	printf("string a =%s\nstring b = %s\n", a, b);
-	printf("\n copy string a to string b:\n");
-	copy_string(a, p);
-	printf("string a = %s\n string b = %s\n", a, b);
+	int max(int, int);
+	int(*p)(int, int);
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	p = max;
+	printf("please enter a and b:");
+	scanf("%d,%d", &a, &b);
+	c = (*p)(a, b);
+	printf("a = %d\nb = %d\nmax = %d\n", a, b, c);
 	return 0;
 }
+//void copy_string(char* from, char* to)
+//{
+//	for (; *from != '0'; from++, to++)
+//	{
+//		*to = *from;
+//	}
+//	*to = 0;
+//}
+//int main()
+//{
+//	void copy_string(char* from, char* to);
+//	char* a = "I am a teacher";
+//	char b[] = "You are a student.";
+//	char* p = b;
+//	printf("string a =%s\nstring b = %s\n", a, b);
+//	printf("\n copy string a to string b:\n");
+//	copy_string(a, p);
+//	printf("string a = %s\n string b = %s\n", a, b);
+//	return 0;
+//}
 //int main()
 //{
 //	int a[3][4] = { 1.2,3.4,5.6,7.8,9,0,11,12 };
