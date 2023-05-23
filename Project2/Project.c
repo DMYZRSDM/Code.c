@@ -8,24 +8,25 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-
-int max(int x, int y)
+int Lmax(int x, int y)
 {
 	int z = 0;
 	if (x > y)
+	{
 		z = x;
+	}
 	else
 		z = y;
 	return(z);
 }
 int main()
 {
-	int max(int, int);
+	int Lmax(int, int);
 	int(*p)(int, int);
 	int a = 0;
 	int b = 0;
 	int c = 0;
-	p = max;
+	p = Lmax;
 	printf("please enter a and b:");
 	scanf("%d,%d", &a, &b);
 	c = (*p)(a, b);
