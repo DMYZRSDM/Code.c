@@ -8,31 +8,63 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
-int Lmax(int x, int y)
+void search(float (*p)[4],int n)
 {
-	int z = 0;
-	if (x > y)
+	int i = 0;
+	int j = 0;
+	int flag = 0;
+	for (j = 0; j < n; j++)
 	{
-		z = x;
+		flag = 0;
+		for (i = 0; i < 4; i++)
+		{
+			if (*(*(p + j) + i) < 60)
+				flag = 1;
+		}
+		if (flag == 1)
+		{
+			printf("No.%d fails,his scores are:\n", j + 1);
+			for (i = 0; i < 4; i++)
+			{
+				printf("%5.1f", *(*(p + j) + i));
+				
+			}
+			printf("\n");
+		}
 	}
-	else
-		z = y;
-	return(z);
 }
 int main()
 {
-	int Lmax(int, int);
-	int(*p)(int, int);
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	p = Lmax;
-	printf("please enter a and b:");
-	scanf("%d,%d", &a, &b);
-	c = (*p)(a, b);
-	printf("a = %d\nb = %d\nmax = %d\n", a, b, c);
+	void search(float(*p)[4], int n);
+	float score[3][4] = { {65,57,70,60},{58,87,89,84},{90,99,100,98} };
+	search(score, 3);
 	return 0;
 }
+//int Lmax(int x, int y)
+//{
+//	int z = 0;
+//	if (x > y)
+//	{
+//		z = x;
+//	}
+//	else
+//		z = y;
+//	return(z);
+//}
+//int main()
+//{
+//	int Lmax(int, int);
+//	int(*p)(int, int);
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	p = Lmax;
+//	printf("please enter a and b:");
+//	scanf("%d,%d", &a, &b);
+//	c = (*p)(a, b);
+//	printf("a = %d\nb = %d\nmax = %d\n", a, b, c);
+//	return 0;
+//}
 //void copy_string(char* from, char* to)
 //{
 //	for (; *from != '0'; from++, to++)
