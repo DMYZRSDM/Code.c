@@ -8,6 +8,11 @@
 #include<time.h>
 #include"add.h"
 #include"game.h"
+
+int main()
+{
+	return 0;
+}
 void search(float (*p)[4],int n)
 {
 	int i = 0;
