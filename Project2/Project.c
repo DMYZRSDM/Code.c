@@ -13,6 +13,7 @@ int main()
 {
 	char* name[] = { "Follow me","Great Wall","FORTRAN" };
 	char** p;
+	int** p;
 	int i = 0;
 	for (i = 0; i < 5; i++)
 	{
