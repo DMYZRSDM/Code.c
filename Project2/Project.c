@@ -11,6 +11,7 @@
 
 int main()
 {
+	char** p;
 	char* name[] = { "Follow me","Great Wall","FORTRAN" };
 	char** p;
 	int** p;
@@ -20,6 +21,7 @@ int main()
 		p = name + i;
 		printf("%s\n", *p);
 	}
+
 	return 0;
 }
 //void search(float (*p)[4],int n)
