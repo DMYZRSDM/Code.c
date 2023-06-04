@@ -9,20 +9,40 @@
 #include"add.h"
 #include"game.h"
 
+void print(char* name[], int n)
+{
+	int i = 0;
+	for (i = 0; i < n; i++)
+		printf("%s\n", name[i]);
+}
+void sort(char* name[], int n)
+{
+	char* temp;
+	int i, j, k;
+	for (i = 0; i < n - 1; i++)
+	{
+		k = i;
+		for (j = i + 1; j < n; j++)
+		{
+			if (strcmp(name[k], name[j]) > 0)
+				k = j;
+		}
+		if (k != i)
+		{
+			temp = name[i];
+			name[i] = name[k];
+			name[k] = temp;
+		}
+	}
+}
 int main()
 {
-	char** p;
-	char* name[] = { "Follow me","Great Wall","FORTRAN" };
-	char** p;
-	float** p;
-	int** p;
-	int i = 0;
-	for (i = 0; i < 5; i++)
-	{
-		p = name + i;
-		printf("%s\n", *p);
-	}
-
+	void sort(char* name[], int n);
+	void print(char* name[], int n);
+	char* name[] = { "Follow me","BASIC","GREAT WALL","FORTRAN","Computer game design" };
+	int n = 5;
+	sort(name, n);
+	print(name, n);
 	return 0;
 }
 //void search(float (*p)[4],int n)
